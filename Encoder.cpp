@@ -38,13 +38,14 @@ Encoder::~Encoder()
 //encoded string output method
 char* Encoder::getEncStr()
 {
-	return this->cStr();
+  return encStr.getString();
 }
 
-//decoded string output method 
+
+//decoded string output method
 char* Encoder::getDecStr()
 {
-	return this->cStr();
+  return decStr.getString();
 }
 
 //metod cStr()
