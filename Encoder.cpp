@@ -12,31 +12,22 @@ Encoder::Encoder()
 }
 
 //constructor with parameter  
-Encoder::Encoder(const char* accStr)
-{
-	
+Encoder::Encoder(const char* accStr)	
+{	
 	str = MyString(accStr);
 	length = str.lengthStr();
-	encStr = MyString(accStr); //by default, it has the same
-	decStr = MyString(accStr); // value as the "incoming" line
+	encStr = str;
+	decStr = str;
 }
 
 //copy constructor
 Encoder::Encoder(const MyString& other)
 {
-	MyString tmpStr = other;
-	char* count = tmpStr.cStr();
-	this->str = other;
-	length = strlen(count);
-
+	this->str = other;					
+	length = this->str.lengthStr();
 	encStr[length] = '\0';
 	decStr[length] = '\0';
-
-	for (int i = 0; i < length; i++)
-	{
-		this->str[i] = tmpStr[i];
-	}
-}
+}	
 
 //destructor
 Encoder::~Encoder()
@@ -57,11 +48,10 @@ char* Encoder::getDecStr()
 }
 
 //metod cStr()
-char* Encoder::cStr()
+char* Encoder::cStr()					
 {
 	char* ch = new char[length + 1];
 	int i;
-
 	for (i = 0; i < length; i++) {
 		ch[i] = str[i];
 	}
