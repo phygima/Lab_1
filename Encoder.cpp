@@ -20,14 +20,15 @@ Encoder::Encoder(const char* accStr)
 	decStr = str;
 }
 
-//copy constructor
 Encoder::Encoder(const MyString& other)
 {
-	this->str = other;					
-	length = this->str.lengthStr();
-	encStr[length] = '\0';
-	decStr[length] = '\0';
+    this->str = MyString(other);
+    char* strLoc = str.cStr();
+    length = strlen(strLoc);
+    encStr = this->str;
+    decStr = this->str;
 }	
+
 
 //destructor
 Encoder::~Encoder()
