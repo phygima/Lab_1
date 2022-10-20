@@ -20,6 +20,7 @@ Encoder::Encoder(const char* accStr)
 	decStr = str;
 }
 
+//copy constructor
 Encoder::Encoder(const MyString& other)
 {
     this->str = MyString(other);
